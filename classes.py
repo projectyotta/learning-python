@@ -1,22 +1,31 @@
-# classes in python are declared using the class attribute
-# each class has multiple methods , which can be called , something like class.method
-# the methods can also have inputs in them , something like class.method(1,2,3) .
 
-class sample ():
+class myClass():
     def method1(self):
-        print "going into method 1 "
+        print "myClass method1"
 
-    def method2(self,randomstring):
-        print "going into method 2" + randomstring
+    def method2(self, someString):
+        print "myClass method2: " + someString
+
+
+class anotherClass(myClass):
+    def method2(self):
+        print "anotherClass method2"
+
+    def method1(self):
+        myClass.method1(self);
+        print "anotherClass method1"
+
 
 def main():
-    c=sample()
+    # still don't understand why I have to say c= myclass() instead of just going myclass.method1()?
+
+
+    c = myClass()
     c.method1()
-    c.method2("  content into randomstring")
+    c.method2("This is a string")
+    c2 = anotherClass()
+    c2.method1()
 
-
-    # after this is done , we will override method1 and method2 by creating another class
-    class re
 
 if __name__ == "__main__":
- main()
+    main()
