@@ -1,4 +1,4 @@
-
+# http://strftime.org/ , has everything that you need.
 from datetime import datetime
 
 def main():
@@ -16,7 +16,18 @@ def main():
 
     print now.strftime("%a , %B %d , %Y ")
 
-    # locale specific information
+    # locale specific information - used for trying to understand if datetime can be printed accordig to the region that you are in
+    # I guess this is useful especially for web applications , where users tend to access the webpage data from multiple locations
+    # codes used for this kind of thing : %c ( date and time , %x ( only date )  , %X ( only time )
+    print now.strftime(" locale specific one :  %c")
+    print now.strftime(" locale specific two :  %x")
+    print now.strftime(" locale specific three :  %X")
+
+    # locale specific for time
+    # %I %H : 12 or 24 hour , %M : Minute , %S : Second , %p : locale's AM/PM
+    print now.strftime("current time now is %I:%m %S %p")
+    # 24 hour clock
+    print now.strftime("time in 24 hour format is %H:%M")
 
 
 if __name__=="__main__":
